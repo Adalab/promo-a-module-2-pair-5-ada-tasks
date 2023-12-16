@@ -24,21 +24,22 @@ const tasks = [
 
 //FUNCIONES
 
-getTask = () => {
+function getTask (task) {
     const taskInputValue = taskInput.value;
-    taskList.innerHTML = '';
-    for (const task of tasks) {
-       taskList.innerHTML += `<li>${tasks.name}</li>`;
-   } 
+       
+    taskList.innerHTML += `<li>
+      <h3>${taskInputValue} </h3>
+      </li>`; 
 }
 
 //EVENTOS
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  event.preventDefault();
 });
 
 taskBtn.addEventListener('click', (event) => {
+   event.preventDefault();
    getTask();
 });
 
